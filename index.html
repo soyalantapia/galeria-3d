@@ -6,10 +6,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Campus con Arte</title>
 <script>
-  // La galería se mudó: se conserva la ruta, los parámetros y el ancla
+  // La galería se mudó: se conserva la ruta, los parámetros y el ancla. La propuesta vieja (/propuesta/) va a la nueva.
   (function () {
     var rest = location.pathname.replace(/^\/galeria-3d\/?/, '');
-    location.replace('https://siglo21.xnod.tech/demo/' + rest + location.search + location.hash);
+    if (/^propuesta(\/|$)/.test(rest)) location.replace('https://siglo21.xnod.tech/' + location.hash);
+    else location.replace('https://siglo21.xnod.tech/demo/' + rest + location.search + location.hash);
   })();
 </script>
 <meta http-equiv="refresh" content="0; url=https://siglo21.xnod.tech/demo/">
